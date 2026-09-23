@@ -1,0 +1,32 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>👋 Gavin Park</h1>
+			<p>
+				개발하며 배우고 만든 것들을 기록하는 공간입니다. 문제를 어떻게 풀었는지,
+				무엇을 만들었는지, 그 과정에서 내린 결정과 근거를 남깁니다.
+			</p>
+			<p>
+				최근에는 로컬 우선(local-first) 지식 워크스페이스
+				<strong>Noye</strong>, 골프 스코어 앱 <strong>BirdieBuddy</strong> 등을
+				만들고 있습니다.
+			</p>
+			<p>
+				<a href="/blog/">글 목록 보기 →</a>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
