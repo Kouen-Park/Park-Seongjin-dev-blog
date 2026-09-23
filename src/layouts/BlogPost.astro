@@ -38,7 +38,7 @@ const { title, description, pubDate, updatedDate, heroImage, fileName } = Astro.
 				{
 					heroImage && (
 						<figure class="hero-image">
-							<Image src={heroImage} alt="" width={1020} height={510} loading="eager" />
+							<Image src={heroImage} alt="" loading="eager" />
 						</figure>
 					)
 				}
@@ -83,14 +83,20 @@ const { title, description, pubDate, updatedDate, heroImage, fileName } = Astro.
 		margin: 0.5rem 0 0;
 	}
 
-	/* 히어로 이미지도 목록 썸네일과 같은 '파일 프리뷰' 처리 */
+	/* 히어로 이미지도 목록 썸네일과 같은 '파일 프리뷰' 처리.
+	   세로형 이미지도 찌그러지지 않도록 원본 비율을 지키고,
+	   너무 길어지지 않게 높이만 제한합니다. */
 	.hero-image {
 		margin: 0 0 2rem;
+		text-align: center;
 	}
 	.hero-image :global(img) {
 		display: block;
-		width: 100%;
+		max-width: 100%;
+		max-height: 460px;
+		width: auto;
 		height: auto;
+		margin: 0 auto;
 		border: 1px dashed var(--border);
 		border-radius: var(--radius);
 	}
