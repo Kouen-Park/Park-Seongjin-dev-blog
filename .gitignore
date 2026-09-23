@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# agent local settings
+.kiro/
+
+# 임시 디자인 목업 (선택 후 삭제)
+.design-mockups/

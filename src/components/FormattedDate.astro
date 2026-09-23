@@ -4,14 +4,21 @@ interface Props {
 }
 
 const { date } = Astro.props;
+
+// 터미널 감각에 맞춰 YYYY-MM-DD로 고정합니다.
+// toISOString()은 UTC로 변환되어 하루 밀릴 수 있으므로 'en-CA'(=ISO 형식) 로케일을 씁니다.
+const formatted = date.toLocaleDateString('en-CA', {
+	year: 'numeric',
+	month: '2-digit',
+	day: '2-digit',
+});
 ---
 
-<time datetime={date.toISOString()}>
-	{
-		date.toLocaleDateString('en-us', {
-			year: 'numeric',
-			month: 'short',
-			day: 'numeric',
-		})
+<time datetime={date.toISOString()}>{formatted}</time>
+
+<style>
+	time {
+		font-family: var(--font-mono);
+		font-variant-numeric: tabular-nums;
 	}
-</time>
+</style>

@@ -1,63 +1,57 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
 import Layout from '../layouts/BlogPost.astro';
 ---
 
 <Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
+	title="소개"
+	description="Gavin Park — 만들면서 배우는 개발자"
+	pubDate={new Date('September 24 2026')}
 >
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+		안녕하세요, 박성진(Gavin Park)입니다. 뉴질랜드에서 컴퓨터과학을 공부하고 있고,
+		필요한 걸 직접 만들어보면서 배우는 편입니다.
 	</p>
 
 	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
+		이 블로그는 그 과정을 남기는 곳입니다. 잘 된 것보다 <strong>어디서 막혔고 그걸
+		어떻게 넘어갔는지</strong>를 주로 씁니다. 나중에 같은 문제를 다시 만났을 때
+		예전의 제가 답을 남겨두었으면 좋겠어서요.
+	</p>
+
+	<h2>만들고 있는 것</h2>
+
+	<ul>
+		<li>
+			<strong>Noye</strong> — 내 컴퓨터 안에서만 돌아가는 문서 검색 도구입니다.
+			PDF나 메모를 넣어두면 키워드가 아니라 뜻으로 찾아주고, 답을 줄 때 어느 문서
+			몇 페이지에서 나왔는지까지 같이 보여줍니다. 거기서 멈추지 않고 그 답을
+			편집 가능한 문서로 이어서 쓸 수 있게 만드는 게 목표입니다.
+			FastAPI, Qdrant, Ollama를 씁니다.
+		</li>
+		<li>
+			<strong>BirdieBuddy</strong> — 골프 라운드 기록 앱입니다. 웹과 iOS를 같이
+			만들고 있습니다. 필드에서는 인터넷이 잘 안 터지는 일이 흔해서, 점수를 적으면
+			일단 폰에 저장하고 신호가 돌아올 때 알아서 서버로 올려보내도록 만들었습니다.
+			ASP.NET Core와 SwiftUI를 씁니다.
+		</li>
+	</ul>
+
+	<h2>주로 쓰는 것</h2>
+
+	<p>
+		Python, TypeScript, C#, Swift를 씁니다. 프레임워크는 FastAPI, Next.js,
+		ASP.NET Core, SwiftUI. 새로운 도구를 고를 때는 요즘 많이 쓰는지보다
+		<em>내가 이걸로 끝까지 만들어낼 수 있는지</em>를 먼저 봅니다.
+	</p>
+
+	<h2>이 블로그에 대해</h2>
+
+	<p>
+		Astro로 만들고 GitHub Pages에 올렸습니다. 마크다운 파일 하나 추가해서 커밋하면
+		배포되도록 해두었습니다. 글 쓰다가 귀찮아서 안 쓰게 되는 걸 막으려고요.
 	</p>
 
 	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
-
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
-
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+		코드는 <a href="https://github.com/Kouen-Park">GitHub</a>에 있습니다.
 	</p>
 </Layout>

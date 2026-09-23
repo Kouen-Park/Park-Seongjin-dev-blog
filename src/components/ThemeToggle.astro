@@ -1,0 +1,63 @@
+---
+// 테마 토글.
+// 초기 테마는 BaseHead의 인라인 스크립트가 이미 <html data-theme>에 설정했습니다.
+// 이 컴포넌트는 그 값을 뒤집고 localStorage에 기억시키는 역할만 합니다.
+---
+
+<button type="button" class="theme-toggle" data-theme-toggle aria-live="polite">
+	<span class="sr-only">테마 전환</span>
+	<span aria-hidden="true" data-theme-label></span>
+</button>
+
+<style>
+	.theme-toggle {
+		font-family: var(--font-mono);
+		font-size: 0.76rem;
+		line-height: 1;
+		padding: 0.3rem 0.55rem;
+		min-height: 24px;
+		cursor: pointer;
+		color: var(--fg-muted);
+		background: transparent;
+		border: 1px solid var(--border);
+		border-radius: 3px;
+		transition:
+			color 0.15s ease,
+			border-color 0.15s ease;
+	}
+	.theme-toggle:hover {
+		color: var(--accent);
+		border-color: var(--accent);
+	}
+</style>
+
+<script is:inline>
+	(() => {
+		const root = document.documentElement;
+		const btn = document.querySelector('[data-theme-toggle]');
+		if (!btn) return;
+		const label = btn.querySelector('[data-theme-label]');
+
+		// 버튼 문구는 '전환하면 무엇이 되는지'를 보여줍니다.
+		const render = () => {
+			const current = root.getAttribute('data-theme');
+			if (label) label.textContent = current === 'dark' ? 'light' : 'dark';
+		};
+
+		btn.addEventListener('click', () => {
+			const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+			root.setAttribute('data-theme', next);
+			localStorage.setItem('theme', next);
+			render();
+		});
+
+		// 사용자가 아직 직접 고르지 않았다면 OS 설정 변경을 따라갑니다.
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+			if (localStorage.getItem('theme')) return;
+			root.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+			render();
+		});
+
+		render();
+	})();
+</script>
