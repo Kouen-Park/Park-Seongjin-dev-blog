@@ -12,13 +12,29 @@ const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
 </a>
+
 <style>
+	/* 대괄호는 장식이므로 콘텐츠가 아니라 ::before/::after로 넣습니다.
+	   (스크린리더가 "대괄호 home 대괄호"로 읽지 않도록) */
 	a {
 		display: inline-block;
 		text-decoration: none;
+		color: var(--fg-muted);
+		transition: color 0.15s ease;
+	}
+	a::before {
+		content: '[';
+		color: var(--fg-faint);
+	}
+	a::after {
+		content: ']';
+		color: var(--fg-faint);
+	}
+	a:hover {
+		color: var(--accent);
 	}
 	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
+		color: var(--accent);
+		font-weight: 700;
 	}
 </style>
