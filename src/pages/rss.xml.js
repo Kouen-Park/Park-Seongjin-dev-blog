@@ -1,9 +1,12 @@
-import { getCollection } from 'astro:content';
 import rss from '@astrojs/rss';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { getSortedPosts } from '../utils/posts';
 
 export async function GET(context) {
-	const posts = await getCollection('blog');
+	// 사이트 화면과 같은 정렬을 씁니다.
+	// (정렬하지 않으면 피드가 파일명 순서로 나가 최신 글이 아래에 묻힙니다)
+	const posts = await getSortedPosts();
+
 	return rss({
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,

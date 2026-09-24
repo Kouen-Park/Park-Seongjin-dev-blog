@@ -20,8 +20,16 @@ const { title, description, image = FallbackImage } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+{/*
+  파비콘은 SVG만 둡니다. favicon.ico는 Astro 기본 로고였으므로 삭제했습니다.
+  구형 브라우저 폴백을 되살리려면 SVG를 ICO로 변환해 public/favicon.ico 로 넣고
+  아래에 ico를 가리키는 link 태그를 하나 더 추가하세요.
+
+  주의: 이 주석은 HTML 주석(<!-- -->)이 아니라 Astro 주석입니다.
+  HTML 주석은 출력에 그대로 나가기 때문에, 그 안에 link 태그를 예시로 적으면
+  브라우저가 살아있는 태그로 읽어 없는 파일을 요청합니다(404).
+*/}
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="icon" href="/favicon.ico" />
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link
 	rel="alternate"

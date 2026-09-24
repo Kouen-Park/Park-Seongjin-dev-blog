@@ -1,7 +1,7 @@
 ---
 title: '블로그를 시작하며'
 description: '개발하면서 배운 것, 삽질한 것, 만든 것을 기록하려고 블로그를 만들었습니다. 미래의 저에게 조금이라도 친절해지기로 했습니다.'
-pubDate: 'Sep 24 2026'
+pubDate: 'Sep 24 2026 02:00'
 heroImage: '../../assets/posts/hello-world.jpeg'
 ---
 

@@ -1,17 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import PostRow from '../components/PostRow.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { getSortedPosts } from '../utils/posts';
 
 // 홈에는 최신 5개만. 전체는 /blog 에서 봅니다.
 const RECENT_COUNT = 5;
 
-const allPosts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const allPosts = await getSortedPosts();
 const posts = allPosts.slice(0, RECENT_COUNT);
 const hasMore = allPosts.length > RECENT_COUNT;
 
