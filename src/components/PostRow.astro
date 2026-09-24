@@ -68,7 +68,10 @@ const hasThumb = Boolean(heroImage);
 	.thumb {
 		width: 104px;
 		height: 70px;
-		object-fit: cover;
+		/* 잘림 없이 이미지 전체를 담습니다. 세로 사진은 가로 칸 안에서
+		   좌우에 여백(레터박스)이 생기며, 그 여백은 패널 색으로 채웁니다. */
+		object-fit: contain;
+		background: var(--panel);
 		border: 1px dashed var(--border);
 		border-radius: 4px;
 		transition: border-color 0.12s ease;
