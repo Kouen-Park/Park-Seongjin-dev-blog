@@ -68,10 +68,10 @@ const hasThumb = Boolean(heroImage);
 	.thumb {
 		width: 104px;
 		height: 70px;
-		object-fit: cover;
-		/* 세로로 긴 인물 사진을 가로 썸네일에 담을 때 위쪽이 잘려 인물이
-		   어색해 보이므로, 크롭 기준을 살짝 위(30%)로 올려 인물을 살립니다. */
-		object-position: center 30%;
+		/* 잘림 없이 이미지 전체를 담습니다. 세로 사진은 가로 칸 안에서
+		   좌우에 여백(레터박스)이 생기며, 그 여백은 패널 색으로 채웁니다. */
+		object-fit: contain;
+		background: var(--panel);
 		border: 1px dashed var(--border);
 		border-radius: 4px;
 		transition: border-color 0.12s ease;
