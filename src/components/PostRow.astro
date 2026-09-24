@@ -19,7 +19,7 @@ const hasThumb = Boolean(heroImage);
 	<a href={`/blog/${post.id}/`} class:list={[{ 'no-thumb': !hasThumb }]}>
 		{
 			heroImage && (
-				<Image class="thumb" src={heroImage} alt="" width={208} height={140} loading="lazy" />
+				<Image class="thumb" src={heroImage} alt="" width={208} loading="lazy" />
 			)
 		}
 		<div class="body">
@@ -45,7 +45,9 @@ const hasThumb = Boolean(heroImage);
 		display: grid;
 		grid-template-columns: 104px 1fr;
 		gap: 1rem;
-		align-items: start;
+		/* 썸네일 박스를 줄 높이 기준 세로 중앙에 둡니다.
+		   start로 두면 요약이 2줄일 때 박스만 위에 붙어 아래가 비어 보입니다. */
+		align-items: center;
 		padding: 0.9rem 0.5rem;
 		text-decoration: none;
 		color: inherit;
