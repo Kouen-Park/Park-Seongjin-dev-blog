@@ -4,12 +4,6 @@ description: 'PTE bit 하나 바꿨을 뿐인데 TLB까지 따라왔다?'
 pubDate: 'Sep 24 2026'
 ---
 
----
-title: 'xv6의 가상 메모리를 직접 건드려봤다'
-description: 'PTE bit 하나 바꿨을 뿐인데 TLB까지 따라왔다?'
-pubDate: 'Sep 24 2026'
----
-
 오늘 COMPSCI 340 Assignment 2를 마무리했다.
 
 이번 과제에서 한 일을 한 줄로 요약하면:
